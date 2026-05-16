@@ -26,7 +26,6 @@ public class TestCreateBooking  extends CommontoAll {
         assertsActions.verifyStringKeyNotNull(bookingResponse.getBookingid());
 
 
-
     }
 
 
