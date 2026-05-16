@@ -1,4 +1,87 @@
 package org.RestAPI.Modules;
 
-public class PayloadManager {
+import com.github.javafaker.Faker;
+import com.google.gson.Gson;
+import org.RestAPI.Pojos.Request.Booking;
+import org.RestAPI.Pojos.Request.Bookingdates;
+import org.RestAPI.Pojos.Respons.BookingResponse;
+
+public class PayloadManager
+{
+
+    Gson gson;
+    Faker faker;
+
+
+    public String Create_Booking_withUserData(){
+
+        Booking booking = new Booking();
+        booking.setFirstname("Rajat");
+        booking.setLastname("Arora");
+        booking.setTotalprice(1000);
+        booking.setDepositpaid(true);
+
+        Bookingdates bookingdates = new Bookingdates();
+        bookingdates.setCheckin("26-20-08");
+        bookingdates.setCheckout("26-08-26");
+        booking.setBookingdates(bookingdates);
+        booking.setAdditionalneeds("Dinner");
+
+        gson = new Gson();
+         String JsonBookingData = gson.toJson(booking);
+         return JsonBookingData;
+
+
+    }
+
+    public String CreteBookingWithwrongBody(){
+        Booking booking = new Booking();
+        booking.setFirstname("会意; 會意");
+        booking.setLastname("会意; 會意");
+        booking.setTotalprice(111);
+        booking.setDepositpaid(true);
+
+        Bookingdates bookingdates = new Bookingdates();
+        bookingdates.setCheckin("24-23-10");
+        bookingdates.setCheckout("37-21-21");
+        booking.setBookingdates(bookingdates);
+        booking.setAdditionalneeds("Lunch");
+
+        gson = new Gson();
+        String JsonBookingData = gson.toJson(booking);
+        return JsonBookingData;
+    }
+
+    public BookingResponse bookingResponse(String responseString){
+        gson = new Gson();
+        BookingResponse bookingResponse = gson.fromJson(responseString, BookingResponse.class);
+        return bookingResponse;
+    }
+
+    public String CreateUSerFromFaker(){
+        faker = new Faker();
+        Booking booking = new Booking();
+        booking.setFirstname(faker.name().firstName());
+        booking.setLastname(faker.name().lastName());
+        booking.setTotalprice(faker.random().nextInt(1000));
+        booking.setDepositpaid(faker.random().nextBoolean());
+
+        Bookingdates bookingdates = new Bookingdates();
+        bookingdates.setCheckin("24-23-10");
+        bookingdates.setCheckout("37-21-21");
+        booking.setBookingdates(bookingdates);
+        booking.setAdditionalneeds(faker.name().name());
+
+        gson = new Gson();
+        String JsonBookingData = gson.toJson(booking);
+        return  JsonBookingData;
+
+
+
+    }
+
+
+
+
+
 }

@@ -1,4 +1,4 @@
-package org.RestAPI.Base.Crud;
+package org.RestAPI.Tests.Crud;
 
 public class TestDeleteBooking {
 }

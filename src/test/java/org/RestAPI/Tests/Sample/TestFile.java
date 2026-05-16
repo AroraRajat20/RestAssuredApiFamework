@@ -1,4 +1,4 @@
-package org.RestAPI.Base.Sample;
+package org.RestAPI.Tests.Sample;
 
 public class TestFile {
     public static void main(String[] args) {

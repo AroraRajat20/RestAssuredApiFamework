@@ -1,4 +1,4 @@
-package org.RestAPI.Base.E2e;
+package org.RestAPI.Tests.E2e;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
