@@ -1,14 +1,12 @@
 package org.RestAPI.Pojos.Request;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 
 public class authrequestPojo {
 
     private String username;
     private String password;
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
 
     public String getUsername() {
         return username;
@@ -26,12 +24,5 @@ public class authrequestPojo {
         this.password = password;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
 
 }

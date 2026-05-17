@@ -40,7 +40,7 @@ public class AssertsActions {
         // AssertJ
         assertThat(keyExpect).isNotNull();
     }
-    public void verifyTrue(boolean keyExpect){
+    public static void verifyTrue(boolean keyExpect){
         // AssertJ
         Assert.assertTrue(keyExpect);
     }
