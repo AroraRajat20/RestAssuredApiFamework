@@ -1,9 +1,11 @@
 package org.RestAPI.listeners;
 
+import io.qameta.allure.Allure;
+import org.RestAPI.Base.CommontoAll;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class TestListener
+public class TestListener extends CommontoAll
         implements ITestListener {
 
     @Override
@@ -33,7 +35,13 @@ public class TestListener
         System.out.println(
                 "FAILED : "
                         + result.getName()
+
         );
+        Allure.addAttachment(
+                "Failed Response",
+                response.asString()
+        );
+
     }
 
     @Override
