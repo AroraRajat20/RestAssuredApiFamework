@@ -14,8 +14,8 @@ public class TestDeleteBooking  extends CommontoAll {
     @Description("Delete ID")
     @Test
     public void test_Delete(){
-        String BookingID = "1542";
-        String token = "c1ee7955e29b702";
+        String BookingID = "1";
+        String token = CreateaToken();
 
 
         requestSpecification.basePath(APIConstants.UpdateBooking_URL + "/"+ BookingID).cookie("token", token);

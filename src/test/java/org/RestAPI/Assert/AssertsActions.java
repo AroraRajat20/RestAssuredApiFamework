@@ -13,7 +13,7 @@ public class AssertsActions {
     public void VerifyStatusCode(Response response, int expected){
 
 //        assertEquals(response.getStatusCode(),expected);
-        Assert.assertEquals(response.getStatusCode(),expected);
+        Assert.assertEquals(response,expected);
 
     }
     public void verifyResponseBody(String actual, String expected, String description){

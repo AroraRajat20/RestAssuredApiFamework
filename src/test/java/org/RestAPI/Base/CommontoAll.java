@@ -48,7 +48,7 @@ public class CommontoAll {
 
     }
 
-    public String Test_CreateaToken(){
+    public String CreateaToken(){
 
         requestSpecification.basePath(APIConstants.Auth_URL);
         response = RestAssured.given(requestSpecification).when().body(payloadManager.CreatAuth()).post();
@@ -56,7 +56,7 @@ public class CommontoAll {
 //        BookingResponse bookingResponse = payloadManager.bookingResponse(response.asString());
         String gettoken = payloadManager.GetToken(response.asString());
 //        validatableResponse.statusCode(200);
-        System.out.println(gettoken);
+//        System.out.println(gettoken);
         return gettoken;
 
     }

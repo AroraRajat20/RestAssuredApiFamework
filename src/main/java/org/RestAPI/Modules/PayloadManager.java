@@ -4,18 +4,18 @@ import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 import org.RestAPI.Pojos.Request.Booking;
 import org.RestAPI.Pojos.Request.Bookingdates;
+import org.RestAPI.Pojos.Request.PutRequestPojo;
 import org.RestAPI.Pojos.Request.authrequestPojo;
 import org.RestAPI.Pojos.Respons.BookingResponse;
 import org.RestAPI.Pojos.Respons.authResponsePojo;
 
-public class PayloadManager
-{
+public class PayloadManager {
 
     Gson gson;
     Faker faker;
 
 
-    public String Create_Booking_withUserData(){
+    public String Create_Booking_withUserData() {
 
         Booking booking = new Booking();
         booking.setFirstname("Rajat");
@@ -30,13 +30,13 @@ public class PayloadManager
         booking.setAdditionalneeds("Dinner");
 
         gson = new Gson();
-         String JsonBookingData = gson.toJson(booking);
-         return JsonBookingData;
+        String JsonBookingData = gson.toJson(booking);
+        return JsonBookingData;
 
 
     }
 
-    public String CreteBookingWithwrongBody(){
+    public String CreteBookingWithwrongBody() {
         Booking booking = new Booking();
         booking.setFirstname("会意; 會意");
         booking.setLastname("会意; 會意");
@@ -55,8 +55,7 @@ public class PayloadManager
     }
 
 
-
-    public String CreateUSerFromFaker(){
+    public String CreateUSerFromFaker() {
         faker = new Faker();
         Booking booking = new Booking();
         booking.setFirstname(faker.name().firstName());
@@ -72,14 +71,13 @@ public class PayloadManager
 
         gson = new Gson();
         String JsonBookingData = gson.toJson(booking);
-        return  JsonBookingData;
-
+        return JsonBookingData;
 
 
     }
 
 
-    public String CreatAuth(){
+    public String CreatAuth() {
 
         authrequestPojo authrequestPojo = new authrequestPojo();
         authrequestPojo.setUsername("admin");
@@ -91,20 +89,31 @@ public class PayloadManager
 
     }
 
-    public BookingResponse bookingResponse(String responseString){
+    public BookingResponse bookingResponse(String responseString) {
         gson = new Gson();
         BookingResponse bookingResponse = gson.fromJson(responseString, BookingResponse.class);
         return bookingResponse;
     }
 
-public String GetToken(String TokenResponse){
+    public String GetToken(String TokenResponse) {
 
         gson = new Gson();
-    authResponsePojo authResponsePojo = gson.fromJson(TokenResponse, authResponsePojo.class);
-    return authResponsePojo.getToken();
+        authResponsePojo authResponsePojo = gson.fromJson(TokenResponse, authResponsePojo.class);
+        return authResponsePojo.getToken();
 
 
     }
 
+    public String UpdatePut() {
 
+        PutRequestPojo putRequestPojo = new PutRequestPojo();
+        putRequestPojo.setFirstname("Rajat");
+        putRequestPojo.setLastname("Arora");
+
+
+        gson = new Gson();
+        String jsonRespons = gson.toJson(putRequestPojo);
+        return jsonRespons;
+
+    }
 }

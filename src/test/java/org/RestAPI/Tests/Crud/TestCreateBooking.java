@@ -31,6 +31,8 @@ public class TestCreateBooking  extends CommontoAll {
         assertsActions.VerifyStatusCode(response,200);
         assertsActions.verifyStringKeyNotNull(bookingResponse.getBookingid());
 
+        response.prettyPrint();
+
 
     }
 
