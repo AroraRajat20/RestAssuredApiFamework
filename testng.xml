@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/Users/rajatarora/IdeaProjects/RestAssuredApiFamework">
         <classes>
-            <class name="org.RestAPI.Base.E2e.IntegrationTestcases">
+            <class name="org.RestAPI.Tests.E2e.IntegrationTestcases">
 
             </class>
         </classes>

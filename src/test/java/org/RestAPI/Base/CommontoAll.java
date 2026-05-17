@@ -33,8 +33,6 @@ public class CommontoAll {
 //        requestSpecification = RestAssured.given();
 //        requestSpecification.baseUri(APIConstants.BaseURL).contentType(ContentType.JSON).log().all();
 ////
-
-
         requestSpecification = new RequestSpecBuilder().setBaseUri(APIConstants.BaseURL)
                 .addHeader("Content-Type", "application/json")
                 .build().log().all();

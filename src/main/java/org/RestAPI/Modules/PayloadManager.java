@@ -7,6 +7,7 @@ import org.RestAPI.Pojos.Request.Bookingdates;
 import org.RestAPI.Pojos.Request.PutRequestPojo;
 import org.RestAPI.Pojos.Request.authrequestPojo;
 import org.RestAPI.Pojos.Respons.BookingResponse;
+import org.RestAPI.Pojos.Respons.GetbookingResponse;
 import org.RestAPI.Pojos.Respons.authResponsePojo;
 
 public class PayloadManager {
@@ -116,4 +117,10 @@ public class PayloadManager {
         return jsonRespons;
 
     }
+
+    public GetbookingResponse getbookingResponse(String UpdateResponse){
+        gson = new Gson();
+    GetbookingResponse getbookingResponse = gson.fromJson(UpdateResponse,GetbookingResponse.class);
+    return getbookingResponse;
+}
 }
