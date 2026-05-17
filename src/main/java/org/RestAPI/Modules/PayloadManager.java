@@ -25,8 +25,8 @@ public class PayloadManager {
         booking.setDepositpaid(true);
 
         Bookingdates bookingdates = new Bookingdates();
-        bookingdates.setCheckin("26-20-08");
-        bookingdates.setCheckout("26-08-26");
+        bookingdates.setCheckin("2026-08-20");
+        bookingdates.setCheckout("2026-08-20");
         booking.setBookingdates(bookingdates);
         booking.setAdditionalneeds("Dinner");
 
@@ -45,8 +45,8 @@ public class PayloadManager {
         booking.setDepositpaid(true);
 
         Bookingdates bookingdates = new Bookingdates();
-        bookingdates.setCheckin("24-23-10");
-        bookingdates.setCheckout("37-21-21");
+        bookingdates.setCheckin("2026-08-20");
+        bookingdates.setCheckout("2026-08-20");
         booking.setBookingdates(bookingdates);
         booking.setAdditionalneeds("Lunch");
 
@@ -65,8 +65,8 @@ public class PayloadManager {
         booking.setDepositpaid(faker.random().nextBoolean());
 
         Bookingdates bookingdates = new Bookingdates();
-        bookingdates.setCheckin("24-23-10");
-        bookingdates.setCheckout("37-21-21");
+        bookingdates.setCheckin("2026-08-20");
+        bookingdates.setCheckout("2026-08-20");
         booking.setBookingdates(bookingdates);
         booking.setAdditionalneeds(faker.name().name());
 
