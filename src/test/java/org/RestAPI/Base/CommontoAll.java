@@ -2,7 +2,6 @@ package org.RestAPI.Base;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
@@ -12,8 +11,6 @@ import org.RestAPI.Modules.PayloadManager;
 import org.RestAPI.endpoint.APIConstants;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
-import javax.swing.plaf.PanelUI;
 
 public class CommontoAll {
 
@@ -48,6 +45,19 @@ public class CommontoAll {
     public void TearDown(){
 
         System.out.println("completed the Test");
+
+    }
+
+    public String Test_CreateaToken(){
+
+        requestSpecification.basePath(APIConstants.Auth_URL);
+        response = RestAssured.given(requestSpecification).when().body(payloadManager.CreatAuth()).post();
+
+//        BookingResponse bookingResponse = payloadManager.bookingResponse(response.asString());
+        String gettoken = payloadManager.GetToken(response.asString());
+//        validatableResponse.statusCode(200);
+        System.out.println(gettoken);
+        return gettoken;
 
     }
 

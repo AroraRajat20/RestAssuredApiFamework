@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 
 public class AssertsActions {
 
-    public void VerifyStatusCode(Response response, Integer expected){
+    public void VerifyStatusCode(Response response, int expected){
 
 //        assertEquals(response.getStatusCode(),expected);
         Assert.assertEquals(response.getStatusCode(),expected);
